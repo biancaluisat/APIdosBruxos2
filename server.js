@@ -44,7 +44,7 @@ app.get("/bruxos", (req, res) => {
     res.json(bruxos);
 });
 
-app.get("/bruxos/:id", (req, res) => {
+app.get("/bruxos/id/:id", (req, res) => {
     let id = req.params.id;
     id = parseInt(id);
     const bruxo = bruxos.find(b => b.id === id);
@@ -54,7 +54,7 @@ app.get("/bruxos/:id", (req, res) => {
         res.status(200).json(bruxo);
     } else {
         res.status(400).json ({
-        mensagem: "bruxo nao encontrado"
+        mensagem: "id de bruxo nao encontrado"
     })
     }
 })
@@ -68,7 +68,7 @@ app.get("/bruxos/nome/:nome", (req, res) => {
         res.status(200).json(bruxosEncontrados);
     } else {
         res.status(404).json ({
-            mensagem: "bruxo não encontrado"
+            mensagem: "nome de bruxo não encontrado"
         })
     }
 })
@@ -82,9 +82,19 @@ app.get("/bruxos/casa/:casa", (req, res) => {
         res.status(200).json(casasEncontrados);
     } else {
         res.status(404).json ({
-            mensagem: "casa não encontrado"
+            mensagem: "casa não encontrada"
         })
     }
+})
+
+app.get("/bruxos/vivos/nao", (req, res) => {
+  const resultados = bruxos.filter((b) => !b.status);
+
+  if (resultados) {
+    res.status(200).json(resultados);
+  } else {
+    res.status(404).json("Nenhum bruxo morto encontrado");
+  }
 })
 
 app.listen(3000, () => {

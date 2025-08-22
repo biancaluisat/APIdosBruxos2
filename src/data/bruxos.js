@@ -8,6 +8,7 @@ export default [
         mascote: "Coruja (Edwiges)",
         patrono: "Cervo",
         especialidade: "Sobreviver a Voldemort 😎",
+        status: true,
     },
     {
         id: 2,
@@ -18,6 +19,7 @@ export default [
         mascote: "Gato (Bichento)",
         patrono: "Lontra",
         especialidade: "Saber tudo de tudo",
+        status: true,
     },
     {
         id: 3,
@@ -28,6 +30,7 @@ export default [
         mascote: "Rato (Perebas)",
         patrono: "Terrier Jack Russell",
         especialidade: "Xadrez Bruxo",
+        status: true,
     },
     {
         id: 4,
@@ -38,6 +41,7 @@ export default [
         mascote: "Coruja (não nomeada)",
         patrono: "Desconhecido",
         especialidade: "Ser irritante",
+        status: true,
     },
     {
         id: 5,
@@ -48,16 +52,18 @@ export default [
         mascote: "Nenhum",
         patrono: "Lebre",
         especialidade: "Ver criaturas imaginárias (ou não) 👻",
+        status: true,
     },
     {
-       id: 6,
-       nome: "Neville Longbottom",
-       casa: "Grifinória",
-       ano: 7,
-       varinha: "Cerejeira e pelo de unicórnio, 30cm",
-       mascote: "Sapo (Trevor)", 
-       patrono: "Não conhecido",
-       especialidade: "Herbologia avançada",
+        id: 6,
+        nome: "Neville Longbottom",
+        casa: "Grifinória",
+        ano: 7,
+        varinha: "Cerejeira e pelo de unicórnio, 30cm",
+        mascote: "Sapo (Trevor)",
+        patrono: "Não conhecido",
+        especialidade: "Herbologia avançada",
+        status: true,
     },
     {
         id: 7,
@@ -68,6 +74,7 @@ export default [
         mascote: "Coruja",
         patrono: "Cisne",
         especialidade: "Quadribol (Apanhadora)",
+        status: true,
     },
     {
         id: 8,
@@ -78,6 +85,7 @@ export default [
         mascote: "Nenhum",
         patrono: "Não conhecido",
         especialidade: "Cavalheirismo",
+        status: false,
     },
     {
         id: 9,
@@ -88,18 +96,19 @@ export default [
         mascote: "Nenhum",
         patrono: "Não conhecido",
         especialidade: "Artes das Trevas",
+        status: false,
     },
     {
         id: 10,
         nome: "Minerva McGonagall",
         casa: "Grifinória",
         ano: 9,
-        varinha:"Abeto e fibra de coração de dragão, 24cm",
+        varinha: "Abeto e fibra de coração de dragão, 24cm",
         mascote: "Gato",
         patrono: "Gato",
         especialidade: "Transfiguração",
+        status: true,
     },
-
     {
         id: 11,
         nome: "Thales Blackthorn",
@@ -109,6 +118,7 @@ export default [
         mascote: "Corvo",
         patrono: "Pantera",
         especialidade: "Magia das Trevas",
+        status: true,
     },
     {
         id: 12,
@@ -119,6 +129,7 @@ export default [
         mascote: "Coruja-das-torres",
         patrono: "Falcão",
         especialidade: "Feitiços",
+        status: true,
     },
     {
         id: 13,
@@ -129,6 +140,7 @@ export default [
         mascote: "Texugo",
         patrono: "Cão de caça",
         especialidade: "Herbologia",
+        status: true,
     },
     {
         id: 14,
@@ -139,6 +151,7 @@ export default [
         mascote: "Cobra",
         patrono: "Coruja",
         especialidade: "Poções",
+        status: true,
     },
     {
         id: 15,
@@ -149,6 +162,6 @@ export default [
         mascote: "Gato Siberiano",
         patrono: "Cervo",
         especialidade: "Defesa Contra as Artes das Trevas",
+        status: true,
     }
 ];
-    
