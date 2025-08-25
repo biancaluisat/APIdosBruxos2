@@ -1,8 +1,10 @@
 import express from "express";
-import bruxos from "./src/data/bruxos.js";
+import dados from "./src/data/dados.js";
 
 const serverPort = 3000;
 const app = express();
+
+const { bruxos, varinhas, animais, pocoes, casas } = dados;
 
 app.use(express.json());
 
@@ -57,7 +59,7 @@ app.get("/bruxos/id/:id", (req, res) => {
         mensagem: "id de bruxo nao encontrado"
     })
     }
-})
+});
 
 app.get("/bruxos/nome/:nome", (req, res) => {
     let nome = req.params.nome.toLocaleLowerCase();
@@ -71,7 +73,7 @@ app.get("/bruxos/nome/:nome", (req, res) => {
             mensagem: "nome de bruxo não encontrado"
         })
     }
-})
+});
 
 app.get("/bruxos/casa/:casa", (req, res) => {
     let casa = req.params.casa.toLocaleLowerCase();
@@ -85,7 +87,7 @@ app.get("/bruxos/casa/:casa", (req, res) => {
             mensagem: "casa não encontrada"
         })
     }
-})
+});
 
 app.get("/bruxos/vivos/nao", (req, res) => {
   const resultados = bruxos.filter((b) => !b.status);
@@ -95,7 +97,91 @@ app.get("/bruxos/vivos/nao", (req, res) => {
   } else {
     res.status(404).json("Nenhum bruxo morto encontrado");
   }
-})
+});
+
+app.get("/varinhas", (req, res) => {
+  if(varinhas.length > 0) {
+      res.status(200).json(varinhas);
+  }
+});
+
+app.get("/varinhas/id/:id", (req, res) => {
+  let id = req.params.id;
+  id = parseInt(id);
+  const varinha = varinhas.find(v => v.id === id);
+  console.log(varinha);
+
+  if(varinha) {
+      res.status(200).json(varinha);
+  } else {
+      res.status(400).json ({
+      mensagem: "id de varinha nao encontrado"
+  })
+  }
+});
+
+app.get("/casas", (req, res) => {
+  if(casas.length > 0) {
+      res.status(200).json(casas);
+  }
+});
+
+app.get("/casas/id/:id", (req, res) => {
+  let id = req.params.id;
+  id = parseInt(id);
+  const casa = casas.find(c => c.id === id);
+  console.log(casa);
+
+  if(casa) {
+      res.status(200).json(casa);
+  } else {
+      res.status(400).json ({
+      mensagem: "id de casa nao encontrado"
+  })
+  }
+});
+
+app.get("/animais", (req, res) => {
+  if(animais.length > 0) {
+      res.status(200).json(animais);
+  } 
+});
+
+app.get("/animais/id/:id", (req, res) => {
+  let id = req.params.id;
+  id = parseInt(id);
+  const animal = animais.find(c => c.id === id);
+  console.log(animal);
+
+  if(animal) {
+      res.status(200).json(animal);
+  } else {
+      res.status(400).json ({
+      mensagem: "id de animal nao encontrado"
+  })
+  }
+});
+
+app.get("/pocoes", (req, res) => {
+  if(pocoes.length > 0) {
+      res.status(200).json(pocoes);
+  } 
+});
+
+app.get("/pocoes/id/:id", (req, res) => {
+  let id = req.params.id;
+  id = parseInt(id);
+  const pocao = pocoes.find(c => c.id === id);
+  console.log(pocao);
+
+  if(pocao) {
+      res.status(200).json(pocao);
+  } else {
+      res.status(400).json ({
+      mensagem: "id de poção nao encontrado"
+  })
+  }
+});
 
 app.listen(3000, () => {
     console.log(`🧙‍♂️ API dos Bruxos está no ar na porta http://localhost:${serverPort} !`);
